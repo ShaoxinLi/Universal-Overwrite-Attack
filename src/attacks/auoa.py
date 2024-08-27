@@ -184,7 +184,7 @@ class AUOA(object):
     def _eval_step(self, images, messages, p, snn):
 
         # generate adv images
-        attack_start_time = int(round(time.time() * 1000))
+        attack_start_time = int(round(time.time()))
         logits = snn(images)
         idxs = torch.argmax(logits, dim=1)
         uoas = []
@@ -194,7 +194,7 @@ class AUOA(object):
         uoas = torch.stack(uoas)
         adv_images = images + uoas
         adv_images = torch.clamp(adv_images, 0., 1.)
-        attack_end_time = int(round(time.time() * 1000))
+        attack_end_time = int(round(time.time()))
 
         # compute loss
         adv_messages = self.decoder(adv_images)

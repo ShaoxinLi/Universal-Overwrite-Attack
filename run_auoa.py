@@ -49,7 +49,7 @@ def parse_arguments():
     # Trainer args
     parser.add_argument("--k", type=int, default=100)
     parser.add_argument("--lr", type=float, default=1e-3)
-    parser.add_argument("--num-epochs", type=int, default=200)
+    parser.add_argument("--num-epochs", type=int, default=80)
     parser.add_argument("--xi", type=float, default=1000.0)
 
     # Tester args
